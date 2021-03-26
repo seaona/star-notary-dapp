@@ -28,6 +28,13 @@
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
+const HDWalletProvider = require('truffle-hdwallet-provider');
+require('dotenv').config();
+const infuraKey = `${process.env.INFURA_NODE}`;
+//
+// const fs = require('fs');
+const mnemonic = `${process.env.METAMASK_MNEMONIC}`;
+
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -64,6 +71,13 @@ module.exports = {
 
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
+
+    rinkeby: {
+      provider: () => new HDWalletProvider(mnemonic, `https://rinkeby.infura.io/v3/${infuraKey}`),
+        network_id: 4,       // rinkeby's id
+        gas: 4500000,        // rinkeby has a lower block limit than mainnet
+        gasPrice: 10000000000
+    },
     // ropsten: {
       // provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/${infuraKey}`),
       // network_id: 3,       // Ropsten's id

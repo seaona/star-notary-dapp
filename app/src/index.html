@@ -2,34 +2,171 @@
 <html>
   <head>
     <title>StarNotary DAPP</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <base href="/">
   </head>
+  
   <style>
-    input {
-      display: block;
-      margin-bottom: 12px;
+
+    @import url('https://fonts.googleapis.com/css?family=Raleway:200');
+    html {
+      height: 100%;
     }
+    body {
+      background-color: #4158D0;
+      background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+      background-repeat: no-repeat;
+      margin: 0;
+      background-attachment: fixed;
+    }
+
+    nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 10em;
+    }
+
+    a{
+      font-size: 40px;
+      margin: 20px;
+      text-decoration: none;
+      color: black;
+      font-family: raleway;
+      transition: color 1s ease-out;
+    }
+
+    a:hover{
+      color: #3498db;
+      border-bottom-color: #3498db;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin: 20px;
+      font-family: raleway;
+      font-weight: 200;
+      color: black;
+    }
+
+    .container {
+      min-height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content:center;
+      align-items: flex-start;
+    }
+
+    .createStar{
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-right: 200px;
+    }
+
+    .lookUpStar{
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 200px;
+    }
+
+
+    input{
+      display: block;
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+      padding: 0.5em 0.25em;
+      border: none;
+      border-radius: 0.2em;
+      font-size: 1.5em;
+      text-align: center;
+      font-family: raleway;
+      box-shadow: 0 0 1em 0.25em rgba(0,0,0,0.2);
+    }
+
+    button {
+      width: 140px;
+      height: 45px;
+      font-family: raleway;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-weight: 500;
+      color: #000;
+      background-color: #fff;
+      border: none;
+      border-radius: 45px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+      outline: none;
+      margin-top:2em;
+    }
+
+  button:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+
+  .label {
+    font-size: 20px;
+  }
+
+  #status {
+    font-family: raleway;
+    font-size: 1.5em;
+  }
+
+  #starInfo{
+    font-family: raleway;
+    font-size: 1.5em;
+  }
+
+    @media screen and (max-width:920px){
+      nav{
+        justify-content: space-around;
+      }
+      a{
+        font-size: 25px;
+      }
+    }
+
+    @media screen and (max-width:600px){
+      nav{
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+
   </style>
+
+
   <body>
-    <h1>StarNotary Token DAPP</h1>
+    <nav>
+      <a href="">StarNotary Token DAPP</a>
+    </nav>
+    <div class="container"> 
+      <div class="createStar">
+        <h1>Create a Star</h1>
+        <a class="label">Star Name:</a><input type="text" id="starName"></input>
+        <a class="label">Star ID:</a><input type="text" id="starId"></input>
+        <button id="createStar" onclick="App.createStar()">Create Star</button>
+        <div id="status"></div>
+      </div>
 
-    <hr>
+      <div class="lookUpStar">
+        <h1>Look up a Star</h1>
+        <a class="label">Star ID:</a><input type="text" id="lookid"></input>
+        <button onclick="App.lookUp()">Look Up a Star</button>
+        <div id="starInfo"></div>
+      </div>
+    </div>
+      
+      
 
-    <br>
-      <h1>Create a Star</h1>
-      <br><label for="starName">Star Name:</label><input type="text" id="starName"></input>
-      <br><label for="starId">Star ID:</label><input type="text" id="starId"></input>
-      <br><br><button id="createStar" onclick="App.createStar()">Create Star</button>
-      <br>
-      <hr>
-      <br>
-      <h1>Look up a Star</h1>
-      <br><label for="name">Star ID:</label><input type="text" id="lookid"></input>
-      <br><br><button onclick="App.lookUp()">Look Up a Star</button>
-      <hr>
-      <br>
-      <span id="status"></span>
-      <br>
     <script src="index.js"></script>
   </body>
 </html>
