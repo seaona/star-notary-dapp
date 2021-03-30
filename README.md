@@ -20,7 +20,7 @@ See details below for basic config and description and flow about the Dapp, as w
 - Openzeppelin-solidity@2.1.2
 
 ## Flow
-This dapp supports 2 main functionalities:
+The current frontend supports 2 main functionalities, though the backend contracts support more (see on the TODOs). The basic flow is as follows:
  ### Create a Star
  This will generate a new transaction and create an ERC721 token corresponding to that Star name and id.
 
