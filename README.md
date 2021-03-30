@@ -11,8 +11,11 @@ This dapp is deployed on Rinkeby
 - Your ERC-721 Token Symbol: "SEA"
 - Contract Address: 0xBE4B214a884B6D091a872ce33b7a9261f8f7556c
 - Transaction Hash (Rinkeby): 0x448c8c90338b35fc1a8b9eec90ace0f342675cec6845d186c77248a8b4bf6560
-- Version of the Truffle and OpenZeppelin used: 
-
+- Truffle v5.2.4 (core: 5.2.4)
+- Solidity v0.5.16 (solc-js)
+- Node v12.14.1
+- Web3.js v1.2.9 
+- Openzeppelin-solidity@2.1.2
 
 ## Flow
 This dapp supports 2 main functionalities:
@@ -22,7 +25,7 @@ This dapp supports 2 main functionalities:
  ### Look for a Star by Id
  This will search for a Star which maps that corresponding id.
 
-![](assets/star-notary-dapp.png)
+![](assets/complete-dapp-flow.gif)
 
 
 ## Running Mocha & Chai Tests
