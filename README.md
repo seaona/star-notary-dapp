@@ -1,10 +1,12 @@
 
 # Star Notary Dapp
 ## Summary
-In this project, I've created a dapp that allows Users to create stars and 
+This project is a Dapp for allow users to create stars and exchange or transfer them using the ERC-721 standard. It's build on top of Rinkeby (Ethereum testnet) and uses Ethereum core technologies like Truffle, Open Zeppelin and Solidity.
+Smart contract generates a new token called "SEA" for transferring ownership between the stars created. This token can be found on Etherscan.
 
 ![](assets/star-notary-dapp.png)
-This dapp is deployed on Rinkeby
+
+See details below for basic config and description and flow about the Dapp, as well as how to set it up and run the tests.
 
 ## Config & Basic Info
 - ERC-721 Token Name: "Seaona"
