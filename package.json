@@ -1,0 +1,28 @@
+{
+  "name": "star-notary-dapp",
+  "version": "1.0.0",
+  "description": "This project is a Dapp for allow users to create stars and exchange or transfer them using the ERC-721 standard. It's build on top of Rinkeby (Ethereum testnet) and uses Ethereum core technologies like Truffle, Open Zeppelin and Solidity. Smart contract generates a new token called \"SEA\" for transferring ownership between the stars created. This token can be found on Etherscan.",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "openzeppelin-solidity": "^2.1.2",
+    "truffle-hdwallet-provider": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seaona/star-notary-dapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seaona/star-notary-dapp/issues"
+  },
+  "homepage": "https://github.com/seaona/star-notary-dapp#readme"
+}
