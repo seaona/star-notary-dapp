@@ -84,7 +84,8 @@ it('can add the star name and star symbol properly', async() => {
     //2. Call the name and symbol properties in your Smart Contract and compare with the name and symbol provided
     let name = await instance.name.call();
     let symbol = await instance.symbol.call();
-    assert.deepEqual([name, symbol], ["Seaona", "SEA"]);
+    assert.equal(name, "Seaona");
+    assert.equal(symbol, "SEA");
 });
 
 it('lets 2 users exchange stars', async() => {
@@ -103,7 +104,8 @@ it('lets 2 users exchange stars', async() => {
     // 3. Verify that the owners changed
     let ownerStarId1After = await instance.ownerOf.call(starId1);
     let ownerStarId2After = await instance.ownerOf.call(starId2);
-    assert.deepEqual([ownerStarId1Before, ownerStarId2Before], [ownerStarId2After, ownerStarId1After])
+    assert.equal(ownerStarId1Before,ownerStarId2After);
+    assert.equal(ownerStarId2Before,ownerStarId1After);
 });
 
 it('lets a user transfer a star', async() => {
@@ -118,7 +120,8 @@ it('lets a user transfer a star', async() => {
     await instance.transferStar(user2, starId, {from: user1});
     // 3. Verify the star owner changed.
     let ownerAfter = await instance.ownerOf.call(starId);
-    assert.deepEqual([ownerBefore, ownerAfter], [user1, user2]);
+    assert.equal(ownerBefore, user1);
+    assert.equal(ownerAfter, user2);
 });
 
 it('lookUptokenIdToStarInfo test', async() => {
